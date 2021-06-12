@@ -1,9 +1,11 @@
 import VueRouter from "vue-router";
 import HomeScreen from "../pages/HomeScreen";
-import Setting from "../pages/SettingScreen";
+import UserScreen from "../pages/dynamicRoute/UserScreen";
+import NotFoundScreen from "../pages/dynamicRoute/NotFoundScreen";
 const routes = [
   { path: "/", component: HomeScreen },
-  { path: "/bar", component: Setting },
+  { path: "/user/:id", component: UserScreen },
+  { path: "*", component: NotFoundScreen },
 ];
 
 const Router = new VueRouter({

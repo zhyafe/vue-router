@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>setting</p>
+    <p>404 not founds</p>
   </div>
 </template>
 
