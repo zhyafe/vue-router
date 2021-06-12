@@ -9,7 +9,7 @@ import NestStudentScreen from "../pages/nestRoute/NestStudentScreen";
 import ProgrammaticScreen from "../pages/programmaticNavigation/ProgrammaticScreen";
 const routes = [
   { path: "/", component: HomeScreen },
-  { path: "/dynamic/:id", component: DynamicScreen },
+  { path: "/dynamic/:id", component: DynamicScreen, name: "dynamic" },
   {
     path: "/nest",
     component: NestScreen,
