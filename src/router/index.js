@@ -6,6 +6,7 @@ import NestScreen from "../pages/nestRoute/NestScreen";
 import NestDefaultScreen from "../pages/nestRoute/NestDefaultScreen";
 import NestTeacherScreen from "../pages/nestRoute/NestTeacherScreen";
 import NestStudentScreen from "../pages/nestRoute/NestStudentScreen";
+import ProgrammaticScreen from "../pages/programmaticNavigation/ProgrammaticScreen";
 const routes = [
   { path: "/", component: HomeScreen },
   { path: "/dynamic/:id", component: DynamicScreen },
@@ -26,6 +27,10 @@ const routes = [
         component: NestStudentScreen,
       },
     ],
+  },
+  {
+    path: "/programmatic",
+    component: ProgrammaticScreen,
   },
   { path: "*", component: NotFoundScreen },
 ];
