@@ -10,6 +10,7 @@ import ProgrammaticScreen from "../pages/programmaticNavigation/ProgrammaticScre
 import NameViewScreen from "../pages/nameView/NameViewScreen";
 import NameViewLeftScreen from "../pages/nameView/NameViewLeftScreen";
 import NameViewRightScreen from "../pages/nameView/NameViewRightScreen";
+import RedirectScreen from "../pages/redirect/RedirectScreen";
 const routes = [
   { path: "/", component: HomeScreen },
   { path: "/dynamic/:id", component: DynamicScreen, name: "dynamic" },
@@ -42,6 +43,14 @@ const routes = [
       nameViewLeft: NameViewLeftScreen,
       nameViewRight: NameViewRightScreen,
     },
+  },
+  {
+    path: "/redirect",
+    component: RedirectScreen,
+  },
+  {
+    path: "/gotoredirect",
+    redirect: "/redirect",
   },
   { path: "*", component: NotFoundScreen },
 ];
