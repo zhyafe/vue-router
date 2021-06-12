@@ -11,6 +11,7 @@ import NameViewScreen from "../pages/nameView/NameViewScreen";
 import NameViewLeftScreen from "../pages/nameView/NameViewLeftScreen";
 import NameViewRightScreen from "../pages/nameView/NameViewRightScreen";
 import RedirectScreen from "../pages/redirect/RedirectScreen";
+import RouterParamsScreen from "../pages/routerParams/RouterParamsScreen";
 const routes = [
   { path: "/", component: HomeScreen },
   { path: "/dynamic/:id", component: DynamicScreen, name: "dynamic" },
@@ -51,6 +52,13 @@ const routes = [
   {
     path: "/gotoredirect",
     redirect: "/redirect",
+  },
+  {
+    path: "/routerparams",
+    component: RouterParamsScreen,
+    props: {
+      name: "zyf",
+    },
   },
   { path: "*", component: NotFoundScreen },
 ];
