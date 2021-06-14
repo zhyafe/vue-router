@@ -12,8 +12,11 @@ import NameViewLeftScreen from "../pages/nameView/NameViewLeftScreen";
 import NameViewRightScreen from "../pages/nameView/NameViewRightScreen";
 import RedirectScreen from "../pages/redirect/RedirectScreen";
 import RouterParamsScreen from "../pages/routerParams/RouterParamsScreen";
+import RouterGuard from "../pages/routerGuard/GuardScreen";
+import LoginScreen from "../pages/auth/LoginScreen";
 const routes = [
   { path: "/", component: HomeScreen },
+  { path: "/login", component: LoginScreen },
   { path: "/dynamic/:id", component: DynamicScreen, name: "dynamic" },
   {
     path: "/nest",
@@ -60,12 +63,23 @@ const routes = [
       name: "zyf",
     },
   },
+  { path: "/routerGuard", component: RouterGuard },
   { path: "*", component: NotFoundScreen },
 ];
 
 const Router = new VueRouter({
   mode: "hash",
   routes,
+});
+
+Router.beforeEach((to, from, next) => {
+  console.log("--------", to, from, next);
+  let token = localStorage.getItem("token");
+  if (!token && !to.fullPath.includes("login")) {
+    next("/login");
+  } else {
+    next();
+  }
 });
 
 export default Router;
