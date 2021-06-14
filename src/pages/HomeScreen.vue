@@ -9,11 +9,19 @@
     <router-link to="/routerparams">路由传参</router-link><br />
     <p>-----------------------------</p>
     <router-link to="/routerGuard">路由守卫</router-link><br />
+
+    <button @click="clearLocalStorage">清除缓存</button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    clearLocalStorage() {
+      localStorage.clear();
+    },
+  },
+};
 </script>
 
 <style></style>

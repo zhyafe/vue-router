@@ -15,7 +15,18 @@ import RouterParamsScreen from "../pages/routerParams/RouterParamsScreen";
 import RouterGuard from "../pages/routerGuard/GuardScreen";
 import LoginScreen from "../pages/auth/LoginScreen";
 const routes = [
-  { path: "/", component: HomeScreen },
+  {
+    path: "/",
+    component: HomeScreen,
+    // beforeEnter: function(to, from, next) {
+    //   let token = localStorage.getItem("token");
+    //   if (!token && !to.fullPath.includes("login")) {
+    //     next("/login");
+    //   } else {
+    //     next();
+    //   }
+    // },
+  },
   { path: "/login", component: LoginScreen },
   { path: "/dynamic/:id", component: DynamicScreen, name: "dynamic" },
   {
@@ -72,14 +83,14 @@ const Router = new VueRouter({
   routes,
 });
 
-Router.beforeEach((to, from, next) => {
-  console.log("--------", to, from, next);
-  let token = localStorage.getItem("token");
-  if (!token && !to.fullPath.includes("login")) {
-    next("/login");
-  } else {
-    next();
-  }
-});
+// Router.beforeEach((to, from, next) => {
+//   console.log("--------", to, from, next);
+//   let token = localStorage.getItem("token");
+//   if (!token && !to.fullPath.includes("login")) {
+//     next("/login");
+//   } else {
+//     next();
+//   }
+// });
 
 export default Router;
