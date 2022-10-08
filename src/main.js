@@ -24,6 +24,7 @@ const routes = [
     children: [
       {
         path: "",
+        name: "aa",
         component: NestDefault,
       },
       {
@@ -60,6 +61,18 @@ const router = createRouter({
   // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
   history: createWebHashHistory(),
   routes, // `routes: routes` 的缩写
+});
+
+// 全局路由守卫
+router.beforeEach((to, from) => {
+  // console.log("[🚀] ~ next", next);
+  console.log("[🚀] ~ from", from);
+  console.log("[🚀] ~ to", to);
+  if (to.path === "/guard/detail") {
+    return { path: "/nest" };
+  }
+  // next();
+  return true;
 });
 
 const app = createApp(App);
