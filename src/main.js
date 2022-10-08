@@ -1,15 +1,38 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import Home from "./components/Home.vue";
-import About from "./components/About.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
+import Home from "./components/Home.vue";
+import Nest from "./views/1nestRoute/Nest.vue";
+import NestDefault from "./views/1nestRoute/NestDefault.vue";
+import TeacherView from "./views/1nestRoute/NestTeacher.vue";
+import StudentView from "./views/1nestRoute/NestStudent.vue";
+import About from "./components/About.vue";
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
 // 我们后面再讨论嵌套路由。
 const routes = [
-  { path: "/", component: Home },
+  { path: "", component: Home },
+  {
+    path: "/nest",
+    component: Nest,
+    name: "nest",
+    children: [
+      {
+        path: "",
+        component: NestDefault,
+      },
+      {
+        path: "teacher",
+        component: TeacherView,
+      },
+      {
+        path: "student",
+        component: StudentView,
+      },
+    ],
+  },
   { path: "/about", component: About },
 ];
 
