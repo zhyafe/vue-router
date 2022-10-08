@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>nest</p>
-
+    <router-link :to="{ name: 'nest', params: {} }"> nest </router-link>
     <div class="nest">
       <div class="nest__lef">
         <router-link to="/nest/teacher">teacher</router-link>

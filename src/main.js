@@ -3,11 +3,14 @@ import "./style.css";
 import App from "./App.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "./components/Home.vue";
-import Nest from "./views/1nestRoute/Nest.vue";
-import NestDefault from "./views/1nestRoute/NestDefault.vue";
-import TeacherView from "./views/1nestRoute/NestTeacher.vue";
-import StudentView from "./views/1nestRoute/NestStudent.vue";
 import About from "./components/About.vue";
+import Nest from "./views/1nest/Nest.vue";
+import NestDefault from "./views/1nest/NestDefault.vue";
+import TeacherView from "./views/1nest/NestTeacher.vue";
+import StudentView from "./views/1nest/NestStudent.vue";
+import Guard from "./views/3guard/Guard.vue";
+import GuardList from "./views/3guard/GuardList.vue";
+import GuardDetail from "./views/3guard/GuardDetail.vue";
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -30,6 +33,20 @@ const routes = [
       {
         path: "student",
         component: StudentView,
+      },
+    ],
+  },
+  {
+    path: "/guard",
+    component: Guard,
+    children: [
+      {
+        path: "list",
+        component: GuardList,
+      },
+      {
+        path: "detail",
+        component: GuardDetail,
       },
     ],
   },
