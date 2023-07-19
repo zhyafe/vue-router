@@ -16,7 +16,7 @@ import GuardDetail from "./views/3guard/GuardDetail.vue";
 // 每个路由都需要映射到一个组件。
 // 我们后面再讨论嵌套路由。
 const routes = [
-  { path: "", component: Home },
+  { path: "/", component: Home },
   {
     path: "/nest",
     component: Nest,
@@ -51,7 +51,7 @@ const routes = [
       },
     ],
   },
-  { path: "/about", component: About },
+  { path: "/about", name: "about", component: About },
 ];
 
 // 3. 创建路由实例并传递 `routes` 配置
@@ -64,15 +64,21 @@ const router = createRouter({
 });
 
 // 全局路由守卫
-router.beforeEach((to, from) => {
+router.beforeEach((to, from, next) => {
   // console.log("[🚀] ~ next", next);
   console.log("[🚀] ~ from", from);
   console.log("[🚀] ~ to", to);
   if (to.path === "/guard/detail") {
-    return { path: "/nest" };
+    // return  { path: "/nest" };
+    router.push({
+      name: "about",
+    });
+    return "";
+    // return { name: "about" };
   }
-  // next();
-  return true;
+  console.log("---end");
+  next();
+  // return true;
 });
 
 const app = createApp(App);

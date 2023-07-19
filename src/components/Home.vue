@@ -1,5 +1,8 @@
 <template>
-  <div>home</div>
+  <div>
+    <p>home</p>
+    <router-link to="/guard">guard</router-link>
+  </div>
 </template>
 <script setup></script>
 
