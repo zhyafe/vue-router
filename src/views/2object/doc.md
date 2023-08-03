@@ -12,7 +12,7 @@ route.meta 获取元信息
 ### 路由的跳转传参 this.$router
 
 ```js
-this.$router({
+this.$router.push({
   //   path: "/aa/bb",
   name: "xx",
   params: {}, //传入params; 注意如果使用path，那么params会失效，所以推荐使用name
