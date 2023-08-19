@@ -7,6 +7,7 @@ import About from "./components/About.vue";
 import Nest from "./views/1nest/Nest.vue";
 import NestDefault from "./views/1nest/NestDefault.vue";
 import TeacherView from "./views/1nest/NestTeacher.vue";
+import TeacherViewSon1 from "./views/1nest/NestTeacherSon1.vue";
 import StudentView from "./views/1nest/NestStudent.vue";
 import Guard from "./views/3guard/Guard.vue";
 import GuardList from "./views/3guard/GuardList.vue";
@@ -16,7 +17,6 @@ import GuardDetail from "./views/3guard/GuardDetail.vue";
 // 每个路由都需要映射到一个组件。
 // 我们后面再讨论嵌套路由。
 const routes = [
-  { path: "/", component: Home },
   {
     path: "/nest",
     component: Nest,
@@ -30,6 +30,12 @@ const routes = [
       {
         path: "teacher",
         component: TeacherView,
+        children: [
+          {
+            path: "t1",
+            component: TeacherViewSon1,
+          },
+        ],
       },
       {
         path: "student",
@@ -37,6 +43,8 @@ const routes = [
       },
     ],
   },
+  { path: "/", component: Home },
+
   {
     path: "/guard",
     component: Guard,

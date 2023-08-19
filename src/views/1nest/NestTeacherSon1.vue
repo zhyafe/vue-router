@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p>nest teacher</p>
-    <RouterView />
+    <p>nest teacher son1</p>
   </div>
 </template>
 
