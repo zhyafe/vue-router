@@ -12,8 +12,10 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import lifeCycle from "@/hooks/lifeCycle";
+
+lifeCycle("nest");
 </script>
 
 <style>
