@@ -1,15 +1,26 @@
-import { createWebHashHistory, createRouter } from "vue-router";
-import Login from "../views/login/index.vue";
+import {
+  createWebHashHistory,
+  createRouter,
+  type RouteRecordRaw,
+} from "vue-router";
+import NotFound from "@/views/notFound/NotFound.vue";
+import Login from "@/views/login/Login.vue";
+import HomePage from "@/views/homePage/HomePage.vue";
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: Login,
+    redirect: "/homePage",
   },
+  // {
+  //   path: "/homePage",
+  //   component: HomePage,
+  // },
   {
     path: "/login",
     component: Login,
   },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
 
 const router = createRouter({

@@ -1,5 +1,5 @@
 {
-  "name": "vue-router",
+  "name": "vite2router4",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "vue": "^3.2.37",
-    "vue-router": "4"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.0",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^2.3.4",
+    "@vue/tsconfig": "^0.7.0",
     "turbo": "^2.3.3",
-    "vite": "^3.1.0"
+    "typescript": "^5.7.2",
+    "vite": "^2.9.18"
   }
 }
