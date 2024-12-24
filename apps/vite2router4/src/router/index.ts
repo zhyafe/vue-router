@@ -12,10 +12,10 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     redirect: "/homePage",
   },
-  // {
-  //   path: "/homePage",
-  //   component: HomePage,
-  // },
+  {
+    path: "/homePage",
+    component: HomePage,
+  },
   {
     path: "/login",
     component: Login,
