@@ -12,7 +12,7 @@ const permissionGuard = (router: Router) => {
 
     // 登录判断
     if (!localStorage.getItem("token")) {
-      return { path: "/login" };
+      return { name: "login", replace: true };
     }
 
     if (to.name == "user") {
