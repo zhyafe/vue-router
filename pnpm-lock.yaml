@@ -12,6 +12,28 @@ importers:
         specifier: ^2.3.3
         version: 2.3.3
 
+  apps/vite2Route4LoginFlow:
+    dependencies:
+      vue:
+        specifier: ^3.2.25
+        version: 3.5.13(typescript@4.9.5)
+      vue-router:
+        specifier: ^4.5.0
+        version: 4.5.0(vue@3.5.13(typescript@4.9.5))
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^2.3.4
+        version: 2.3.4(vite@2.9.18)(vue@3.5.13(typescript@4.9.5))
+      typescript:
+        specifier: ^4.5.4
+        version: 4.9.5
+      vite:
+        specifier: ^2.9.15
+        version: 2.9.18
+      vue-tsc:
+        specifier: ^0.34.7
+        version: 0.34.17(typescript@4.9.5)
+
   apps/vite2router4:
     dependencies:
       vue:
@@ -365,14 +387,28 @@ packages:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
 
+  '@volar/code-gen@0.34.17':
+    resolution: {integrity: sha512-rHR7BA71BJ/4S7xUOPMPiB7uk6iU9oTWpEMZxFi5VGC9iJmDncE82WzU5iYpcbOBCVHsOjMh0+5CGMgdO6SaPA==}
+
   '@volar/language-core@2.4.11':
     resolution: {integrity: sha512-lN2C1+ByfW9/JRPpqScuZt/4OrUUse57GLI6TbLgTIqBVemdl1wNcZ1qYGEo2+Gw8coYLgCy7SuKqn6IrQcQgg==}
+
+  '@volar/source-map@0.34.17':
+    resolution: {integrity: sha512-3yn1IMXJGGWB/G817/VFlFMi8oh5pmE7VzUqvgMZMrppaZpKj6/juvJIEiXNxRsgWc0RxIO8OSp4htdPUg1Raw==}
 
   '@volar/source-map@2.4.11':
     resolution: {integrity: sha512-ZQpmafIGvaZMn/8iuvCFGrW3smeqkq/IIh9F1SdSx9aUl0J4Iurzd6/FhmjNO5g2ejF3rT45dKskgXWiofqlZQ==}
 
   '@volar/typescript@2.4.11':
     resolution: {integrity: sha512-2DT+Tdh88Spp5PyPbqhyoYavYCPDsqbHLFwcUI9K1NlY1YgUJvujGdrqUp0zWxnW7KWNTr3xSpMuv2WnaTKDAw==}
+
+  '@volar/vue-code-gen@0.34.17':
+    resolution: {integrity: sha512-17pzcK29fyFWUc+C82J3JYSnA+jy3QNrIldb9kPaP9Itbik05ZjEIyEue9FjhgIAuHeYSn4LDM5s6nGjxyfhsQ==}
+    deprecated: 'WARNING: This project has been renamed to @vue/language-core. Install using @vue/language-core instead.'
+
+  '@volar/vue-typescript@0.34.17':
+    resolution: {integrity: sha512-U0YSVIBPRWVPmgJHNa4nrfq88+oS+tmyZNxmnfajIw9A/GOGZQiKXHC0k09SVvbYXlsjgJ6NIjhm9NuAhGRQjg==}
+    deprecated: 'WARNING: This project has been renamed to @vue/typescript. Install using @vue/typescript instead.'
 
   '@vue/compiler-core@3.5.13':
     resolution: {integrity: sha512-oOdAkwqUfW1WqpwSYJce06wvt6HljgY3fGeM9NcVA1HaYOij3mZG9Rkysn0OHuyUAGMbEbARIpsG+LPVlBJ5/Q==}
@@ -690,6 +726,11 @@ packages:
     resolution: {integrity: sha512-DUHWQAcC8BTiUZDRzAYGvpSpGLiaOQPfYXlCieQbwUvmml/LRGIe3raKdrOPOoiX0DYlzxs2nH6BoWJoZrj8hA==}
     hasBin: true
 
+  typescript@4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+
   typescript@5.6.3:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
@@ -766,6 +807,12 @@ packages:
     resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
     peerDependencies:
       vue: ^3.2.0
+
+  vue-tsc@0.34.17:
+    resolution: {integrity: sha512-jzUXky44ZLHC4daaJag7FQr3idlPYN719/K1eObGljz5KaS2UnVGTU/XSYCd7d6ampYYg4OsyalbHyJIxV0aEQ==}
+    hasBin: true
+    peerDependencies:
+      typescript: '*'
 
   vue-tsc@2.1.10:
     resolution: {integrity: sha512-RBNSfaaRHcN5uqVqJSZh++Gy/YUzryuv9u1aFWhsammDJXNtUiJMNoJ747lZcQ68wUQFx6E73y4FY3D8E7FGMA==}
@@ -938,6 +985,11 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
+  '@vitejs/plugin-vue@2.3.4(vite@2.9.18)(vue@3.5.13(typescript@4.9.5))':
+    dependencies:
+      vite: 2.9.18
+      vue: 3.5.13(typescript@4.9.5)
+
   '@vitejs/plugin-vue@2.3.4(vite@2.9.18)(vue@3.5.13(typescript@5.7.2))':
     dependencies:
       vite: 2.9.18
@@ -948,9 +1000,15 @@ snapshots:
       vite: 6.0.4(@types/node@22.10.2)
       vue: 3.5.13(typescript@5.6.3)
 
+  '@volar/code-gen@0.34.17':
+    dependencies:
+      '@volar/source-map': 0.34.17
+
   '@volar/language-core@2.4.11':
     dependencies:
       '@volar/source-map': 2.4.11
+
+  '@volar/source-map@0.34.17': {}
 
   '@volar/source-map@2.4.11': {}
 
@@ -959,6 +1017,22 @@ snapshots:
       '@volar/language-core': 2.4.11
       path-browserify: 1.0.1
       vscode-uri: 3.0.8
+
+  '@volar/vue-code-gen@0.34.17':
+    dependencies:
+      '@volar/code-gen': 0.34.17
+      '@volar/source-map': 0.34.17
+      '@vue/compiler-core': 3.5.13
+      '@vue/compiler-dom': 3.5.13
+      '@vue/shared': 3.5.13
+
+  '@volar/vue-typescript@0.34.17':
+    dependencies:
+      '@volar/code-gen': 0.34.17
+      '@volar/source-map': 0.34.17
+      '@volar/vue-code-gen': 0.34.17
+      '@vue/compiler-sfc': 3.5.13
+      '@vue/reactivity': 3.5.13
 
   '@vue/compiler-core@3.5.13':
     dependencies:
@@ -1025,6 +1099,12 @@ snapshots:
       '@vue/runtime-core': 3.5.13
       '@vue/shared': 3.5.13
       csstype: 3.1.3
+
+  '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@4.9.5))':
+    dependencies:
+      '@vue/compiler-ssr': 3.5.13
+      '@vue/shared': 3.5.13
+      vue: 3.5.13(typescript@4.9.5)
 
   '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.6.3))':
     dependencies:
@@ -1284,6 +1364,8 @@ snapshots:
       turbo-windows-64: 2.3.3
       turbo-windows-arm64: 2.3.3
 
+  typescript@4.9.5: {}
+
   typescript@5.6.3: {}
 
   typescript@5.7.2: {}
@@ -1310,10 +1392,20 @@ snapshots:
 
   vscode-uri@3.0.8: {}
 
+  vue-router@4.5.0(vue@3.5.13(typescript@4.9.5)):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.13(typescript@4.9.5)
+
   vue-router@4.5.0(vue@3.5.13(typescript@5.7.2)):
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.13(typescript@5.7.2)
+
+  vue-tsc@0.34.17(typescript@4.9.5):
+    dependencies:
+      '@volar/vue-typescript': 0.34.17
+      typescript: 4.9.5
 
   vue-tsc@2.1.10(typescript@5.6.3):
     dependencies:
@@ -1321,6 +1413,16 @@ snapshots:
       '@vue/language-core': 2.1.10(typescript@5.6.3)
       semver: 7.6.3
       typescript: 5.6.3
+
+  vue@3.5.13(typescript@4.9.5):
+    dependencies:
+      '@vue/compiler-dom': 3.5.13
+      '@vue/compiler-sfc': 3.5.13
+      '@vue/runtime-dom': 3.5.13
+      '@vue/server-renderer': 3.5.13(vue@3.5.13(typescript@4.9.5))
+      '@vue/shared': 3.5.13
+    optionalDependencies:
+      typescript: 4.9.5
 
   vue@3.5.13(typescript@5.6.3):
     dependencies:
