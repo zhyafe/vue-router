@@ -3,6 +3,7 @@ import Home from "../views/home/Home.vue";
 import User from "../views/user/User.vue";
 import Login from "../views/login/Login.vue";
 import permissionGuard from "./guard/permissionGuard";
+import NotFound from "../views/notfound/NotFound.vue";
 
 let routes: RouteRecordRaw[] = [
   {
@@ -24,6 +25,7 @@ let routes: RouteRecordRaw[] = [
     name: "user",
     component: User,
   },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
 
 const router = createRouter({

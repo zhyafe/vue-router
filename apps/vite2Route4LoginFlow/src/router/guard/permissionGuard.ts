@@ -1,7 +1,7 @@
 import { Router } from "vue-router";
 
 const permissionGuard = (router: Router) => {
-  router.beforeEach((to, from) => {
+  router.beforeEach((to, from, next) => {
     console.log("🚀 ~ from:", from);
     console.log("🚀 ~ to:", to);
 
@@ -14,6 +14,7 @@ const permissionGuard = (router: Router) => {
      * 白名单判断,无需鉴权页面
      */
     if (["login"].includes(to.name)) {
+      next();
       return true;
     }
 
@@ -21,7 +22,8 @@ const permissionGuard = (router: Router) => {
      * 登录判断 无token
      */
     if (!localStorage.getItem("token")) {
-      return { name: "login", replace: true };
+      next({ path: "login" });
+      // return { name: "login", replace: true };
     }
 
     /**
@@ -29,6 +31,18 @@ const permissionGuard = (router: Router) => {
      *  -如果已经初始化 返回true
      *  -如果未初始化 执行初始化逻辑：获取用户信息；获取路由信息，添加路由；
      */
+
+    /**
+     * 页面的跳转，如果跳转的是notfound（可能访问的是接口中的路由），判断to.path是否在接口返回的路由数据中，
+     * -如果在重定向到改path
+     * -如果不在，执行next()访问notFound页面
+     */
+    let isBackServerPath = false;
+    if (to.name == "NotFound" && isBackServerPath) {
+      next({ path: to.fullPath, replace: true });
+    } else {
+      next();
+    }
   });
 };
 
