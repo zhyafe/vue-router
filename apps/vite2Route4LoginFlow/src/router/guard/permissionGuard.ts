@@ -1,7 +1,12 @@
 import { Router } from "vue-router";
 
+const demofn = () => {
+  return Promise.reject('');
+};
+
 const permissionGuard = (router: Router) => {
-  router.beforeEach((to, from, next) => {
+  router.beforeEach(async (to, from, next) => {
+    await demofn();
     console.log("🚀 ~ from:", from);
     console.log("🚀 ~ to:", to);
 
